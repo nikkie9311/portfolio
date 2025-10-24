@@ -1,0 +1,195 @@
+
+        
+        :root {
+            --color-dark: #1e1e1e; 
+            --color-accent: #00A89A; 
+            --color-light: #ffffff;
+            --color-text-dark: #333333;
+        }
+
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-light); 
+            color: var(--color-text-dark);
+        }
+        
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 4rem;
+        }
+        
+        
+        .nav-link:hover {
+            color: var(--color-accent) !important;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        
+        #hero {
+            background-color: var(--color-dark);
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 6rem; 
+        }
+
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10%; 
+            width: 70%;
+            height: 100%;
+            background-color: var(--color-accent);
+            clip-path: polygon(
+                0 0, 
+                100% 0, 
+                100% 100%, 
+                40% 100%, 
+                0 60%
+            );
+            transform: skewX(-15deg);
+            z-index: 10;
+        }
+
+       
+        #hero-content {
+            position: relative;
+            z-index: 20;
+        }
+        
+       
+        .cta-button {
+            transition: all 0.3s ease;
+            background-color: var(--color-accent);
+            color: var(--color-light);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 168, 154, 0.6); /* Teal Shadow */
+        }
+
+
+        
+        .profile-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 10px solid var(--color-accent); /* Teal border */
+            overflow: hidden;
+            flex-shrink: 0; 
+            box-shadow: 0 0 0 15px rgba(0, 168, 154, 0.1); /* Outer ring effect */
+        }
+
+        /* Project Card Hover Effect */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--color-accent);
+        }
+        
+        
+        .section-card {
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            border-top: 5px solid var(--color-accent);
+        }
+        
+       
+        .skill-tag {
+            background-color: #e0f2f1;
+            color: var(--color-accent); 
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .skill-tag:hover {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+            transform: scale(1.05);
+        }
+
+
+       
+        #education-special {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 1rem;
+            margin-bottom: 3rem; 
+        }
+        
+        
+        #education-special::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%; 
+            width: 70%;
+            height: 100%;
+            background-color: var(--color-accent);
+            clip-path: polygon(
+                0 0, 
+                60% 0, 
+                100% 40%, 
+                100% 100%, 
+                0 100% 
+            );
+            transform: skewX(15deg);
+            z-index: 10;
+        }
+        
+        
+        #education-content {
+            position: relative;
+            z-index: 20;
+        }
+        
+        
+        .education-timeline .group-circle {
+            background-color: var(--color-accent);
+        }
+        .education-timeline .text-accent-highlight {
+             color: #66d9ef; 
+        }
+
+
+       
+        @media (max-width: 768px) {
+            #hero::after {
+                width: 100%;
+                right: 0;
+                transform: skewX(0deg);
+                clip-path: polygon(
+                    0 70%, 
+                    100% 50%, 
+                    100% 100%, 
+                    0 100%
+                );
+            }
+            #hero {
+                padding-bottom: 12rem; 
+            }
+            
+            #education-special::before {
+                width: 100%;
+                left: 0;
+                transform: skewX(0deg);
+                clip-path: polygon(
+                    0 0, 
+                    100% 0, 
+                    100% 30%, 
+                    0 50%
+                );
+            }
+        }
+   
